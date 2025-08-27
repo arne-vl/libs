@@ -3,14 +3,14 @@
 #include <chrono>
 #include <iomanip>
 #include <iostream>
-#include <sstream>
 #include <string>
 
 enum LogLevel { DEBUG, INFO, WARNING, ERROR };
 
 class Logger {
   public:
-    Logger(const bool &logDate = false) { logsDate = logDate; }
+    Logger() { logsDate = false; }
+    Logger(const bool &logDate) { logsDate = logDate; }
 
     void log(LogLevel level, const std::string &msg) {
         if (logsDate) {
